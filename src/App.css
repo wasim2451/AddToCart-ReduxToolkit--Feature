@@ -1,0 +1,11 @@
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+button{
+    padding: 10px;
+    width: 50%;
+    font-size: medium;
+    font-weight: 600;
+}
