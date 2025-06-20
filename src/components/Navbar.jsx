@@ -15,7 +15,9 @@ const styles = {
     backgroundColor: '#333',
     color: '#fff',
     height:'50px',
-    gap:'100px'
+    gap:'100px',
+    position :'fixed',
+    width :'100%'
   },
   navItem: {
     fontSize: '25px',
