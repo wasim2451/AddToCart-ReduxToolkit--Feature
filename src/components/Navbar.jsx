@@ -1,5 +1,8 @@
 import React from "react";
-const Navbar = ({ totalItems, totalPrice }) => {
+import { useSelector } from "react-redux";
+const Navbar = () => {
+    const data=useSelector((state)=>state.addToCart.data);
+    console.log(data);
 const styles = {
   navbar: {
     display: 'flex',
@@ -24,10 +27,10 @@ const styles = {
   return (
     <nav style={styles.navbar}>
       <div style={styles.navItem}>
-        Total Items: <span style={styles.highlight}>{totalItems?totalItems:0}</span>
+        Total Items: <span style={styles.highlight}>{data.length!=0?data.length:0}</span>
       </div>
       <div style={styles.navItem}>
-        Total Price: <span style={styles.highlight}>$1000</span>
+        Total Price: <span style={styles.highlight}></span>
       </div>
     </nav>
   );

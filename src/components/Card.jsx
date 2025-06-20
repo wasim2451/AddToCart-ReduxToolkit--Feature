@@ -1,7 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/slice/cartReducer';
 
 // Define the ProductCard component
  const Card = (product) => {
+    const dispatch=useDispatch();
   return (
     <div style={styles.card}>
       <img src={product.image} alt={product.productName} style={styles.image} />
@@ -9,7 +12,10 @@ import React from 'react';
         <h3 style={styles.productName}>{product.productName}</h3>
         <p style={styles.price}>Price: ${product.price}</p>
       </div>
-      <button>Add to Cart</button>
+      <button onClick={()=>dispatch(addToCart({
+        name:`${product.productName}`,
+        price:`${product.price}`
+      }))}>Add to Cart</button>
     </div>
   );
 };
